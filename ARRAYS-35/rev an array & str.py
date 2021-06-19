@@ -28,10 +28,24 @@ def revArray(arr):
         s1.append(arr[i])
     return s1
 
+# for both array and string using slicing
+def arr(A):
+    return A[::-1]
+
+# for array using swap
+def reverseWord(A):
+    start = 0 
+    end = len(A) - 1
+    while start < end:
+        A[start], A[end] = A[end], A[start]
+        start += 1
+        end -= 1
+    return A
+
 
 if __name__ == '__main__':
     # s = 'giver not taker'
     s1 = [1,2,3,4,5,6]
-    # ans = reverseWord(s)
-    ans = revArray(s1)
+    ans = reverseWord(s1)
+    # ans = arr(s)
     print(ans)
