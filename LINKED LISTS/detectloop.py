@@ -33,3 +33,23 @@ class Solution:
             fast = fast.next.next
             if fast == slow:
                 return True
+
+"""using dict is the fastest soln with more memory which maybe due to using extra dict data structure"""
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def hasCycle(self, head: ListNode) -> bool:
+        di = {}
+        t = head
+        while t:
+            if t == None or t.next == None:
+                return False
+            if t in di:
+                return True
+            di[t] = 1
+            t = t.next
+        return False
